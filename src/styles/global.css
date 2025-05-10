@@ -11,6 +11,7 @@
   /* pick any OKLCH colors */
   --color-primary: oklch(0.78 0.1687 65.71);
   --color-accent: oklch(0.51 0.196 22.53);
+  --color-secondary: oklch(0.34 0.1251 330.49);
 
   /* 5 % accent on white and on black */
   --color-light: color-mix(in oklch, var(--color-primary) 5%, white);
