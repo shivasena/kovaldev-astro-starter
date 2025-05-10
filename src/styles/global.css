@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  /* --font-family: 'Outfit Variable', sans-serif;
+  --font-outfit: 'Outfit Variable', sans-serif; */
+
+  /* Colors */
+  /* pick any OKLCH accent */
+  --color-accent: oklch(0.78 0.1687 65.71);
+  --color-secondary: oklch(0.51 0.196 22.53);
+
+  /* 5 % accent on white and on black */
+  --color-light: color-mix(in oklch, var(--color-accent) 5%, white);
+  --color-dark:  color-mix(in oklch, var(--color-accent) 5%, black);
+
+  /* Typography */
+  /* body text */
+  --text-base: 1rem;                 
+  --text-base--line-height: 1.75;    
+  --text-base--font-weight: 400;     
+
+  /* H1: fluid size, tight leading, bold */
+  --text-h1: clamp(2.5rem, 5vw, 3.052rem);
+  --text-h1--line-height: 1.2;       
+  --text-h1--font-weight: 700;       
+
+  /* H2: fluid size, snug leading, semi‑bold */
+  --text-h2: clamp(2rem, 4vw, 2.441rem);
+  --text-h2--line-height: 1.25;      
+  --text-h2--font-weight: 600;       
+
+  /* H3: fluid size, snug leading, semi‑bold */
+  --text-h3: clamp(1.75rem, 3vw, 1.953rem);
+  --text-h3--line-height: 1.25;      
+  --text-h3--font-weight: 600;       
+
+  /* H4: fluid size, relaxed leading, semi‑bold */
+  --text-h4: clamp(1.375rem, 2.5vw, 1.563rem);
+  --text-h4--line-height: 1.3;       
+  --text-h4--font-weight: 600;       
+
+  /* H5: fluid size, relaxed leading, semi‑bold */
+  --text-h5: clamp(1.125rem, 2vw, 1.25rem);
+  --text-h5--line-height: 1.33;      
+  --text-h5--font-weight: 600;       
+
+  /* H6: fluid size, relaxed leading, semi‑bold */
+  --text-h6: clamp(1rem, 1.5vw, 1.063rem);
+  --text-h6--line-height: 1.33;      
+  --text-h6--font-weight: 600;    
+
+}
+
+@layer base {
+  body {
+    @apply bg-light text-dark antialiased text-balance;
+  }
+}
