@@ -117,9 +117,7 @@ sanity.config.ts          # optional, Sanity configuration
 - Primary styling via `global.css` and `@theme`:
 
   ```css
-  @import "tailwindcss/base";
-  @import "tailwindcss/components";
-  @import "tailwindcss/utilities";
+  @import "tailwindcss";
 
   @theme {
     --text-base: 1rem;

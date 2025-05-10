@@ -1,0 +1,31 @@
+---
+import Layout from "@layouts/layout.astro";
+---
+
+<Layout>
+  <main
+    class="grid min-h-full place-items-center py-24 sm:py-32 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="text-center space-y-8">
+      <p class="text-primary font-bold">404</p>
+      <h1 class="text-h1 capitalize">Page not found</h1>
+      <p class="text-quote">
+        Sorry, we couldn't find the page you're looking for.
+      </p>
+      <div class="flex items-center justify-center gap-x-6">
+        <a
+          href="/"
+          class="rounded-md bg-primary px-3.5 py-2.5 text-light shadow-xs hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >Go back home</a
+        >
+        {
+          /* Contact support 
+        <a href="/contact/" class="text-dark"
+          >Contact support <span aria-hidden="true">&rarr;</span></a
+        >
+        */
+        }
+      </div>
+    </div>
+  </main>
+</Layout>
