@@ -10,12 +10,29 @@
 
 ---
 
+## AI Hooks
+
+- Use `/** @autoDoc */` above exported JS/TS functions to generate documentation.
+- Use `/** @generateTests */` above utility functions to scaffold tests.
+- Use `<!-- @autoDocs -->` in `.astro` templates to generate component docs.
+- Use `<!-- @suggestProps -->` in `.astro` files where AI should infer and suggest prop types.
+
+---
+
+## Test File Conventions
+
+- Name test files as `*.test.{js,ts}` or `*.spec.{js,ts}`.
+- Use Vitest with `describe`/`it` structure and `vi.mock()` for mocking.
+
+---
+
 ## Project Structure
 
 ```
 src/
 ├── components/           # .astro and framework components
 ├── components/svg/       # SVGs transformed into components
+├── icons/                # (Preferred) SVGs for astro-icon integration
 ├── layouts/              # Shared layout components
 ├── pages/                # File-based routes
 ├── content/              # Astro Content Layer collections (with TS types)
@@ -26,23 +43,28 @@ src/
 ├── types/                # Shared TypeScript types
 └── public/               # Static assets
 astro.config.mjs
-tailwind.config.js        # minimal, primarily for scanning files
 sanity.config.ts          # optional, Sanity configuration
 ```
+
+- **Note:** Exclude `src/icons/**` from Astro rules for direct component imports; use only for astro-icon integration.
 
 ---
 
 ## Icons
 
-- Pick a consistent SVG icon set.
-- Transform SVGs to Astro components in `src/components/svg/`.
+- Pick a consistent SVG icon set (preferably from a single `@iconify-json/*` collection per project).
+- Use [astro-icon](https://www.astroicon.dev/getting-started/) and the `<Icon />` component for all icon needs—avoid inline SVGs.
+- Only add additional Iconify collections if the primary collection doesn't have relevant icons.
+- Place custom SVGs in `src/icons/` for slug-based referencing with astro-icon.
+- Organize icons in subfolders within `src/icons/` for clarity.
+- **Accessibility:** Always provide ARIA labels and semantic meaning for icons.
 
 ---
 
 ## Component Development
 
 - Use `.astro` files by default.
-- Import React/Vue/Svelte components only if advanced interactivity is required and put those component under the /components/react/, /components/vue/, /components/svelte/ folders.
+- Import React/Vue/Svelte components only if advanced interactivity is required and put those components under the /components/react/, /components/vue/, /components/svelte/ folders.
 - Design components for prop-driven reuse.
 
 ---
@@ -80,6 +102,7 @@ sanity.config.ts          # optional, Sanity configuration
   ```
 
 - Access via `import { collections } from 'astro:content'`.
+- Use `getCollection()` for type-safe content queries.
 
 ### Sanity CMS (Optional)
 
@@ -108,6 +131,7 @@ sanity.config.ts          # optional, Sanity configuration
 
 - Use SQLite + Turso for lightweight DB needs.
 - Fetch at build time in `getStaticPaths()` or server utilities.
+- Use `Astro.glob()` for local data, combined with external sources as needed.
 
 ---
 
@@ -135,10 +159,9 @@ sanity.config.ts          # optional, Sanity configuration
   }
   ```
 
-- Use your defined colors first; for contrast, leverage generic Tailwind `white` and `black` utilities.
-- For graded tints or shades, apply opacity utilities (e.g., `text-dark/50`).
-- Use `space-y-X` for consistent vertical spacing between block children rather than custom margins.
-- Leverage Tailwind plugins: Forms, Typography.
+- **Color tokens:** Use only your project’s predefined color tokens (except `white` and `black` for contrast). Never use generic Tailwind palettes like `bg-blue-500` or `text-pink-300`.
+- **Spacing:** Stick to your container policy for horizontal gutters. For vertical gaps between siblings, always use `space-y-<n>` utilities—no individual top/bottom margins or paddings. Choose spacing steps from a single consistent scale (divisible by 3 or 4), not both, with only rare exceptions.
+- **Typography:** Always apply your semantic typography utilities from `global.css` (e.g. `.text-h1`, `.text-lead`), never ad-hoc Tailwind text sizes or weights. When you pull in example code, automatically swap any raw `text-lg`/`font-bold` etc. for your branded classes.
 
 ---
 
@@ -147,6 +170,7 @@ sanity.config.ts          # optional, Sanity configuration
 - Use Unpic for optimized images in Astro:
   - Endpoint: `https://unpic.pics/img/astro/`
   - Component: `@unpic/astro`
+- Prefer Astro’s image integration for basic optimization.
 
 ---
 
@@ -154,13 +178,14 @@ sanity.config.ts          # optional, Sanity configuration
 
 - Use Alpine.js for simple UI behaviors (`client:load` or CDN).
 - For complex state, leverage Astro’s partial hydration (`client:idle`, `client:visible`).
+- **Astro client directives:** Use `client:load` for essential hydration, `client:idle`/`client:visible` for noncritical components.
 
 ---
 
 ## Forms
 
-- Netlify Forms or custom endpoints.
-- Include hidden `form-name` input and a thank-you redirect.
+- Use Netlify Forms or custom endpoints.
+- **Always include a hidden `form-name` input** and a thank-you redirect.
 
 ---
 
@@ -183,34 +208,39 @@ sanity.config.ts          # optional, Sanity configuration
 
 ## SEO & Meta
 
-- Standardize `<SEO>` component for meta tags.
-- Use canonical URLs.
+- Standardize a `<SEO>` component for meta tags.
+- Use canonical URLs, meta descriptions, Open Graph, and Twitter Card tags.
 
 ---
 
 ## Testing & QA
 
 - Unit tests for utility functions.
-- Vitest for end-to-end.
-- Visual regression testing.
+- Use Vitest for unit and end-to-end tests, and `vi.mock()` for mocking.
+- Visual regression testing for UI components.
+- Test `getStaticPaths()` and data fetching logic.
 
 ---
 
 ## Accessibility
 
-- Semantic HTML, ARIA roles.
-- Keyboard navigation.
+- Use semantic HTML, ARIA roles, and keyboard navigation for all interactive elements.
+- Test with screen readers and accessibility tools.
+- Provide ARIA labels for icons and form elements.
 
 ---
 
 ## Conventions
 
-- Use ES modules, native `node:fetch`.
+- Use ES modules and native `node:fetch`.
 - TypeScript for all data.
-- Consistent trailing-slashes in URLs.
-- Use `@unpic/astro` for optimized images.
+- Use consistent trailing-slashes in URLs.
+- Use Fontsource for web font optimization.
+- Follow Astro’s file-based routing conventions.
 
-### Reference
+---
+
+## Reference
 
 - **Astro v5 Documentation**: https://docs.astro.build
 - **Content Layer**: https://docs.astro.build/en/guides/content-collections/
@@ -219,3 +249,4 @@ sanity.config.ts          # optional, Sanity configuration
 - **Netlify Documentation**: https://docs.netlify.com
 - **Fontsource**: https://fontsource.org/
 - **Unpic** https://unpic.pics/img/astro/
+- **See also:** `.cursor/cursorrules.astro` and `.cursor/cursorrules.global` for enforced rules and more code examples.

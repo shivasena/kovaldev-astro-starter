@@ -1,0 +1,55 @@
+---
+description: "Global Cursor rules for JavaScript/TypeScript & Astro projects"
+globs:
+  include:
+    - "src/**/*.{astro,js,ts,jsx,tsx}"
+  exclude:
+    - "node_modules/**"
+    - "public/**"
+    - "dist/**"
+alwaysApply: true
+---
+
+## Global Key Principles
+
+[!must] Write modular, composable functions with single responsibilities.
+[!must] Use ES module syntax; avoid CommonJS patterns.
+[!should] Enforce TypeScript strict mode (`--strict`) for type safety.
+[!could] Use `<Fragment>` in `.astro` files for multiple root elements.
+[!should] Keep front-matter YAML minimal; delegate detailed content to source files.
+
+## Test File Conventions
+
+testGlobs:
+  - "**/*.test.{js,ts}"
+  - "**/*.spec.{js,ts}"
+
+[!should] Suggest Vitest `describe`/`it` structure for tests and `vi.mock()` for mocking.
+
+## Styling & Theming
+
+### Tailwind Theme Colors
+[!must] Use only your project’s predefined color tokens.  
+• Tailwind’s generic palettes are off-limits—except `white` and `black` for contrast.  
+• Examples: `bg-accent-yellow`, `text-secondary-1`; **never** `bg-blue-500` or `text-pink-300`.
+
+### Spacing
+[!must] Stick to your container policy for horizontal gutters.  
+[!must] For vertical gaps between siblings, always use `space-y-<n>` utilities—no individual top/bottom margins or paddings.  
+[!should] Choose spacing steps from a single consistent scale (divisible by 3 **or** 4), not both, with only rare exceptions.
+
+### Typography
+[!must] Always apply your semantic typography utilities from `global.css` (e.g. `.text-h1`, `.text-lead`), never ad-hoc Tailwind text sizes or weights.  
+[!could] When you pull in example code, automatically swap any raw `text-lg`/`font-bold` etc. for your branded classes.
+
+
+## Icon & Asset Management
+
+[!should] When working with icons, prefer consistent icon sets and maintain design system consistency.
+[!should] For SVG icons, create reusable components with proper TypeScript interfaces.
+[!could] Consider icon accessibility with proper ARIA labels and semantic meaning.
+
+## AI Hooks
+
+- **AI Hook**: `/** @autoDoc */` above exported functions to generate documentation.
+- **AI Hook**: `/** @generateTests */` above utility functions to scaffold tests.
