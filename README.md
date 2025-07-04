@@ -1,33 +1,67 @@
-# Astro Starter Kit: Minimal
+# Astro Starter Kit: KovalDev
+
+A modern, accessible, and customizable Astro starter template with a comprehensive design system and reusable components.
 
 ```sh
 npm create astro@latest kovaldev-astro-projectname -- --template shivasena/kovaldev-astro-starter
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## ✨ Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- 🎨 **Modern Design System** - OKLCH colors, fluid typography, semantic classes
+- 🧩 **Reusable Components** - Footer, Button, and more with TypeScript support
+- ♿ **Accessibility First** - WCAG compliant components with proper ARIA labels
+- 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
+- 🔧 **TypeScript Ready** - Full type safety with path aliases
+- 📚 **Comprehensive Docs** - Detailed documentation for all components
 
-## 🚀 Project Structure
+## 🚀 Quick Start
 
-Inside of your Astro project, you'll see the following folders and files:
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser** and navigate to `http://localhost:4321`
+
+## 📁 Project Structure
 
 ```text
 /
-├── public/
+├── docs/                   # Documentation
+│   ├── README.md          # Documentation index
+│   ├── getting-started.md # Getting started guide
+│   └── components/        # Component documentation
+├── public/                # Static assets
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/        # Reusable components
+│   │   ├── ui/           # Base UI components
+│   │   └── Footer.astro  # Footer component
+│   ├── layouts/          # Page layouts
+│   ├── pages/            # Astro pages (file-based routing)
+│   ├── styles/           # Global styles and design tokens
+│   └── types/            # TypeScript interfaces
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧩 Components
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- **[Footer Component](./docs/components/footer.md)** - Customizable footer with company information
+- **Button Component** - Versatile button with multiple variants
+- **More coming soon...**
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 📚 Documentation
+
+- **[Getting Started](./docs/getting-started.md)** - Complete setup and customization guide
+- **[Component Documentation](./docs/components/)** - Detailed component usage and examples
+- **[Design System](./docs/getting-started.md#design-system)** - Colors, typography, and spacing
 
 ## 🧞 Commands
 
@@ -42,6 +76,17 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## 🎨 Design System
+
+This starter includes a modern design system with:
+
+- **OKLCH Colors** - Perceptually uniform color space
+- **Fluid Typography** - Responsive text sizing with semantic classes
+- **Consistent Spacing** - Systematic spacing scale
+- **Accessibility** - High contrast and keyboard navigation
+
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Check [our documentation](./docs/) for detailed guides
+- Review [Astro documentation](https://docs.astro.build)
+- Join our [Discord server](https://astro.build/chat)

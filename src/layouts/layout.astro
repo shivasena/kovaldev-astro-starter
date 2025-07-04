@@ -1,5 +1,6 @@
 ---
 import "@styles/global.css";
+import Footer from "@components/Footer.astro";
 ---
 
 <html lang="en" class="h-full">
@@ -11,7 +12,15 @@ import "@styles/global.css";
     <meta name="author" content="Mike Koval https://koval.dev/" />
     <title>Astro</title>
   </head>
-  <body class="h-full">
-    <slot />
+  <body class="h-full flex flex-col">
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer
+      companyName="Your Company"
+      location="Your City, State"
+      email="hello@yourcompany.com"
+      website="https://yourcompany.com"
+    />
   </body>
 </html>

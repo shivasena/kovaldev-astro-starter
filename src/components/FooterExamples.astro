@@ -1,0 +1,53 @@
+---
+import Footer from "./Footer.astro";
+---
+
+<!-- Basic Footer -->
+<Footer
+  companyName="Acme Corporation"
+  location="San Francisco, CA"
+  phone="+1 (555) 123-4567"
+  email="info@acme.com"
+  website="https://acme.com"
+/>
+
+<!-- Footer with Social Media -->
+<Footer
+  companyName="Tech Startup"
+  location="Austin, TX"
+  phone="+1 (555) 987-6543"
+  email="hello@techstartup.com"
+  website="https://techstartup.com"
+  showSocial={true}
+  socialLinks={[
+    {
+      platform: "Twitter",
+      url: "https://twitter.com/techstartup",
+      label: "Follow us on Twitter",
+    },
+    {
+      platform: "LinkedIn",
+      url: "https://linkedin.com/company/techstartup",
+      label: "Connect with us on LinkedIn",
+    },
+    {
+      platform: "GitHub",
+      url: "https://github.com/techstartup",
+      label: "Check out our GitHub",
+    },
+  ]}
+/>
+
+<!-- Minimal Footer -->
+<Footer companyName="Simple Company" />
+
+<!-- Custom Styled Footer -->
+<Footer
+  companyName="Creative Agency"
+  location="New York, NY"
+  email="hello@creativeagency.com"
+  backgroundColor="bg-primary"
+  textColor="text-white"
+  class="shadow-lg"
+/>
+

@@ -1,0 +1,154 @@
+---
+export interface Props {
+  /** Company/organization name */
+  companyName?: string;
+  /** Company/organization location */
+  location?: string;
+  /** Company/organization phone number */
+  phone?: string;
+  /** Company/organization email */
+  email?: string;
+  /** Company/organization website */
+  website?: string;
+  /** Custom logo component to render */
+  logo?: any;
+  /** Additional CSS classes */
+  class?: string;
+  /** Footer background color (defaults to dark theme) */
+  backgroundColor?: string;
+  /** Footer text color (defaults to white) */
+  textColor?: string;
+  /** Show social media links */
+  showSocial?: boolean;
+  /** Social media links */
+  socialLinks?: {
+    platform: string;
+    url: string;
+    label: string;
+  }[];
+  /** Additional footer content */
+  additionalContent?: any;
+}
+
+const {
+  companyName = "Your Company",
+  location,
+  phone,
+  email,
+  website,
+  logo,
+  class: className = "",
+  backgroundColor = "bg-dark",
+  textColor = "text-light",
+  showSocial = false,
+  socialLinks = [],
+  additionalContent,
+} = Astro.props;
+
+// Get current year for copyright statement
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  aria-labelledby="footer-heading"
+  class={`${backgroundColor} ${textColor} ${className}`}
+>
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Logo -->
+      <div class="mb-6 md:mb-0">
+        <a href="/" class="inline-block" aria-label={`${companyName} Home`}>
+          {
+            logo ? (
+              <Fragment set:html={logo} />
+            ) : (
+              <div class="text-h4 font-semibold">{companyName}</div>
+            )
+          }
+        </a>
+      </div>
+
+      <!-- Contact info -->
+      {
+        (location || phone || email || website) && (
+          <address class="not-italic text-center md:text-right text-small text-gray-300 mb-6 md:mb-0">
+            {companyName && <p>{companyName}</p>}
+            {location && <p>{location}</p>}
+            {phone && (
+              <p class="mt-2">
+                <a
+                  href={`tel:${phone.replace(/\s/g, "")}`}
+                  class="hover:text-white transition-colors duration-200"
+                >
+                  {phone}
+                </a>
+              </p>
+            )}
+            {email && (
+              <p class="mt-1">
+                <a
+                  href={`mailto:${email}`}
+                  class="hover:text-white transition-colors duration-200"
+                >
+                  {email}
+                </a>
+              </p>
+            )}
+            {website && (
+              <p class="mt-1">
+                <a
+                  href={website}
+                  class="hover:text-white transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {website.replace(/^https?:\/\//, "")}
+                </a>
+              </p>
+            )}
+          </address>
+        )
+      }
+    </div>
+
+    <!-- Social Media Links -->
+    {
+      showSocial && socialLinks.length > 0 && (
+        <div class="mt-6 pt-6 border-t border-gray-700">
+          <div class="flex justify-center space-x-6">
+            {socialLinks.map((link) => (
+              <a
+                href={link.url}
+                class="text-gray-300 hover:text-white transition-colors duration-200"
+                aria-label={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.platform}
+              </a>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Additional Content -->
+    {
+      additionalContent && (
+        <div class="mt-6 pt-6 border-t border-gray-700">
+          <Fragment set:html={additionalContent} />
+        </div>
+      )
+    }
+
+    <!-- Copyright -->
+    <div class="mt-8 pt-6 border-t border-gray-700">
+      <p class="text-small text-gray-300 text-center">
+        &copy; {currentYear}
+        {companyName}. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
