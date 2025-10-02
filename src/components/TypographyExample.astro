@@ -1,0 +1,180 @@
+---
+import Button from "@components/ui/Button.astro";
+// TypographyExample.astro
+// Demonstrates all typography styles in the design system
+---
+
+<div class="py-16 md:py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
+  <!-- Eyebrow + Lead Combination Example -->
+  <section class="space-y-8">
+    <div class="text-eyebrow text-accent">Typography</div>
+    <h1 class="text-h1 pb-2">Primary Heading (H1)</h1>
+    <p class="text-lead">
+      This is a lead paragraph following an H1 heading. It uses the
+      <span class="font-mono text-small">text-lead</span> utility for introductory
+      text that's slightly larger and optimized for reading flow.
+    </p>
+    <p>
+      This is regular body text (<span class="font-mono text-small">text-p</span
+      >) that demonstrates the visual relationship between your largest heading
+      and body text. A good typography hierarchy helps guide readers through
+      your content effectively while maintaining readability across different
+      screen sizes.
+    </p>
+  </section>
+
+  <!-- Eyebrow + H2 Combination Example -->
+  <section class="space-y-8">
+    <span class="text-eyebrow text-secondary">Typography Guide</span>
+    <h2 class="text-h2">Secondary Heading (H2)</h2>
+    <p>
+      H2 headings are ideal for major section breaks within your content. This
+      paragraph shows how body text pairs with your second-level heading. Notice
+      how the size difference creates visual hierarchy while remaining
+      proportional and balanced.
+    </p>
+  </section>
+
+  <!-- New Typography Utilities Showcase -->
+  <section class="space-y-8">
+    <h3 class="text-h3 mb-6">Typography Utilities Showcase</h3>
+
+    <div class="p-6 bg-secondary/5 rounded-lg border border-secondary/20 mb-6">
+      <h4 class="text-h4 mb-2">Lead Text Example</h4>
+      <p class="text-small text-secondary mb-4 font-mono">
+        <code>bg-secondary/5</code> · Soft neutral ground for demo content
+      </p>
+      <p class="text-lead">
+        This is a lead paragraph (<span class="font-mono text-small"
+          >text-lead</span
+        >) perfect for introductory text, article summaries, or important
+        announcements. It's slightly larger than regular body text with
+        optimized line height.
+      </p>
+    </div>
+
+    <div class="p-6 bg-accent/5 rounded-lg border border-accent/20">
+      <span class="text-eyebrow text-accent mb-2 block">Category Label</span>
+      <p class="text-small text-accent mb-4 font-mono">
+        <code>bg-accent/5</code> · Warm accent background for highlights
+      </p>
+      <p class="text-small font-mono mb-4">
+        Class: <code>text-eyebrow text-accent</code>
+      </p>
+      <p>
+        Eyebrow text (<span class="font-mono text-small">text-eyebrow</span>) is
+        perfect for category labels, section identifiers, or small labels above
+        headlines. It's automatically uppercase with letter spacing.
+      </p>
+    </div>
+  </section>
+
+  <section class="space-y-8">
+    <h3 class="text-h3 mb-6">Tertiary Heading (H3)</h3>
+    <p>
+      H3 headings work well for subsections and important points. This
+      accompanying paragraph demonstrates how your tertiary headings relate to
+      standard body text. The contrast should be noticeable but not as dramatic
+      as with higher-level headings.
+    </p>
+  </section>
+
+  <section class="space-y-8">
+    <h4 class="text-h4 mb-4">Fourth Level Heading (H4)</h4>
+    <p>
+      H4 headings provide further content organization for more detailed
+      information. This paragraph shows the relationship between your
+      fourth-level heading and normal paragraph text. At this level, the heading
+      should still stand out while beginning to approach the text size.
+    </p>
+  </section>
+
+  <section class="space-y-8">
+    <h5 class="text-h5 mb-4">Fifth Level Heading (H5)</h5>
+    <p>
+      H5 headings are typically used for minor sections or callouts. This
+      paragraph demonstrates how your fifth-level heading pairs with standard
+      body text. The visual distinction becomes more subtle at this level, often
+      relying on weight differences rather than dramatic size changes.
+    </p>
+  </section>
+
+  <section class="space-y-8">
+    <h6 class="text-h6 mb-4">Sixth Level Heading (H6)</h6>
+    <p>
+      H6 headings represent your smallest heading size, useful for small details
+      or specialized content. This paragraph shows how your smallest heading
+      relates to normal paragraph text. At this level, the distinction is often
+      minimal, with perhaps only font weight differentiating the heading.
+    </p>
+  </section>
+
+  <section class="space-y-8">
+    <p class="text-quote italic">
+      This is an example of a blockquote or featured text using the quote
+      typography style. It should stand out from regular paragraphs while
+      maintaining harmony with the overall typographic system.
+    </p>
+  </section>
+
+  <section class="space-y-8">
+    <p class="text-p mb-4">
+      This is a standard paragraph (<span class="font-mono text-small"
+        >text-p</span
+      >) demonstrating your base text style. It should be highly readable and
+      comfortable for extended reading.
+    </p>
+    <p class="text-smallall mb-6">
+      This is small text (<span class="font-mono text-xs">text-smallall</span>)
+      which might be used for captions, footnotes, or supplementary information.
+    </p>
+    <Button variant="solid" size="md">Button Text Style</Button>
+  </section>
+
+  <!-- Real-world Usage Examples -->
+  <section class="space-y-12">
+    <h3 class="text-h3 mb-6">Real-world Usage Patterns</h3>
+
+    <div
+      class="p-4 sm:p-6 lg:p-8 bg-white rounded-lg shadow-xs hover:shadow-md transition-shadow duration-300 ease-in-out mb-6"
+    >
+      <span class="text-eyebrow text-primary">Blog Post</span>
+      <p class="text-small text-dark mb-4 font-mono">
+        <code>bg-white</code> · Clean white background with shadow
+      </p>
+      <h2 class="text-h2 mb-6">How to Design Better Typography</h2>
+      <p class="text-lead mb-6">
+        Typography is the art and technique of arranging type to make written
+        language readable, legible, and appealing when displayed.
+      </p>
+      <p>
+        This combination shows eyebrow + headline + lead + body text - a common
+        pattern in blog posts and articles for creating clear visual hierarchy.
+      </p>
+    </div>
+
+    <div
+      class="p-4 sm:p-6 lg:p-8 bg-white rounded-lg shadow-xs hover:shadow-md transition-shadow duration-300 ease-in-out mb-6"
+    >
+      <span class="text-eyebrow text-secondary">Recipe Card</span>
+      <p class="text-small text-dark mb-4 font-mono">
+        <code>bg-white</code> · Clean white background with shadow
+      </p>
+      <h3 class="text-h3 mb-4">Classic Chocolate Chip Cookies</h3>
+      <p class="text-small text-accent mb-4">
+        Prep time: 15 mins | Cook time: 12 mins
+      </p>
+      <p>
+        This shows how eyebrow text can categorize different types of content,
+        while small text provides supplementary information like metadata.
+      </p>
+    </div>
+
+    <div class="mb-6">
+      <p class="text-small font-mono">
+        <strong>Available Utilities:</strong> text-h1, text-h2, text-h3, text-h4,
+        text-h5, text-h6, text-p, text-lead, text-small, text-quote, text-eyebrow
+      </p>
+    </div>
+  </section>
+</div>

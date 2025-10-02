@@ -8,7 +8,6 @@
   */
 
   /* Colors */
-  /* pick any OKLCH colors */
   --color-primary: oklch(0.78 0.1687 65.71);
   --color-accent: oklch(0.51 0.196 22.53);
   --color-secondary: oklch(0.34 0.1251 330.49);
@@ -63,10 +62,94 @@
   --text-small--line-height: 1.5;
   --text-small--font-weight: 400;
 
+  /* Lead text - for introductory paragraphs */
+  --text-lead: clamp(1.125rem, 2.5vw, 1.325rem);
+  --text-lead--line-height: 1.6;
+  --text-lead--font-weight: 400;
+
+  /* Eyebrow text - for small labels above headlines */
+  --text-eyebrow: clamp(0.75rem, 1.75vw, 0.9rem);
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--font-weight: 600;
+
+  /* Body paragraph text */
+  --text-p: clamp(0.875rem, 2vw, 1rem);
+  --text-p--line-height: 1.75;
+  --text-p--font-weight: 400;
+
 }
 
 @layer base {
   body {
     @apply bg-light text-dark antialiased text-balance;
+    /* Apply basic paragraph styling to body */
+    font-size: var(--text-p);
+    line-height: var(--text-p--line-height);
+    font-weight: var(--text-p--font-weight);
+  }
+}
+
+@layer utilities {
+  /* HEADINGS - tighter line-heights, strong weight */
+  .text-h1 {
+    font-size: var(--text-h1);
+    line-height: var(--text-h1--line-height);
+    font-weight: var(--text-h1--font-weight);
+  }
+  .text-h2 {
+    font-size: var(--text-h2);
+    line-height: var(--text-h2--line-height);
+    font-weight: var(--text-h2--font-weight);
+  }
+  .text-h3 {
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+    font-weight: var(--text-h3--font-weight);
+  }
+  .text-h4 {
+    font-size: var(--text-h4);
+    line-height: var(--text-h4--line-height);
+    font-weight: var(--text-h4--font-weight);
+  }
+  .text-h5 {
+    font-size: var(--text-h5);
+    line-height: var(--text-h5--line-height);
+    font-weight: var(--text-h5--font-weight);
+  }
+  .text-h6 {
+    font-size: var(--text-h6);
+    line-height: var(--text-h6--line-height);
+    font-weight: var(--text-h6--font-weight);
+  }
+
+  /* BODY TEXT - comfortable line-height, normal weight */
+  .text-p {
+    font-size: var(--text-p);
+    line-height: var(--text-p--line-height);
+    font-weight: var(--text-p--font-weight);
+  }
+  .text-small {
+    font-size: var(--text-small);
+    line-height: var(--text-small--line-height);
+    font-weight: var(--text-small--font-weight);
+  }
+  .text-quote {
+    font-size: var(--text-quote);
+    line-height: var(--text-quote--line-height);
+    font-weight: var(--text-quote--font-weight);
+  }
+  .text-lead {
+    font-size: var(--text-lead);
+    line-height: var(--text-lead--line-height);
+    font-weight: var(--text-lead--font-weight);
+  }
+
+  /* EYEBROW TEXT - above headlines, small, accent color */
+  .text-eyebrow {
+    font-size: var(--text-eyebrow);
+    line-height: var(--text-eyebrow--line-height);
+    font-weight: var(--text-eyebrow--font-weight);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 }

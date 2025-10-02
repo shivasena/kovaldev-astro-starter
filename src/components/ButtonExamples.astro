@@ -2,95 +2,109 @@
 import Button from "@components/ui/Button.astro";
 ---
 
-<div class="my-16 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-8">
-  <!-- Basic Variants -->
-  <section class="space-y-4">
-    <h2 class="text-h3">Button Variants</h2>
-    <div class="flex flex-wrap gap-4">
-      <Button variant="solid">Solid Button</Button>
-      <Button variant="outline">Outline Button</Button>
-      <Button variant="ghost">Ghost Button</Button>
-      <Button variant="link">Link Button</Button>
-    </div>
-  </section>
+<div class="bg-white">
+  <div class="py-16 md:py-24 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-12">
+    <!-- Buttons Main Section -->
+    <section class="space-y-8">
+      <div class="text-eyebrow text-accent">Components</div>
+      <h1 class="text-h1">Buttons</h1>
+      <p class="text-lead">
+        Interactive elements that trigger actions and guide users through your
+        interface. Buttons come in various styles, sizes, and states to
+        accommodate different use cases and design requirements.
+      </p>
+    </section>
 
-  <!-- Sizes -->
-  <section class="space-y-4">
-    <h2 class="text-h3">Button Sizes</h2>
-    <div class="flex flex-wrap items-center gap-4">
-      <Button size="sm">Small</Button>
-      <Button size="md">Medium</Button>
-      <Button size="lg">Large</Button>
-    </div>
-  </section>
+    <!-- Basic Variants -->
+    <section class="space-y-4">
+      <h2 class="text-h3">Button Variants</h2>
+      <div class="flex flex-wrap gap-4">
+        <Button variant="solid">Solid Button</Button>
+        <Button variant="outline">Outline Button</Button>
+        <Button variant="ghost">Ghost Button</Button>
+        <Button variant="link">Link Button</Button>
+      </div>
+    </section>
 
-  <!-- States -->
-  <section class="space-y-4">
-    <h2 class="text-h3">Button States</h2>
-    <div class="flex flex-wrap gap-4">
-      <Button>Normal</Button>
-      <Button disabled>Disabled</Button>
-      <Button loading>Loading</Button>
-      <Button variant="outline" loading>Loading Outline</Button>
-    </div>
-  </section>
+    <!-- Sizes -->
+    <section class="space-y-4">
+      <h2 class="text-h3">Button Sizes</h2>
+      <div class="flex flex-wrap items-center gap-4">
+        <Button size="sm">Small</Button>
+        <Button size="md">Medium</Button>
+        <Button size="lg">Large</Button>
+      </div>
+    </section>
 
-  <!-- Full Width -->
-  <section class="space-y-4">
-    <h2 class="text-h3">Full Width</h2>
-    <div class="space-y-2">
-      <Button fullWidth>Full Width Button</Button>
-      <Button variant="outline" fullWidth>Full Width Outline</Button>
-    </div>
-  </section>
+    <!-- States -->
+    <section class="space-y-4">
+      <h2 class="text-h3">Button States</h2>
+      <div class="flex flex-wrap gap-4">
+        <Button>Normal</Button>
+        <Button disabled>Disabled</Button>
+        <Button loading>Loading</Button>
+        <Button variant="outline" loading>Loading Outline</Button>
+      </div>
+    </section>
 
-  <!-- Accessibility Examples -->
-  <section class="space-y-4">
-    <h2 class="text-h3">Accessibility Examples</h2>
-    <div class="flex flex-wrap gap-4">
-      <Button aria-label="Close dialog">×</Button>
-      <Button aria-describedby="help-text">Help</Button>
-      <Button aria-expanded="false" aria-haspopup="menu">Menu</Button>
-      <Button aria-pressed="false">Toggle</Button>
-    </div>
-    <p id="help-text" class="text-small text-secondary">
-      This button provides additional help information.
-    </p>
-  </section>
+    <!-- Full Width -->
+    <section class="space-y-4">
+      <h2 class="text-h3">Full Width</h2>
+      <div class="space-y-2">
+        <Button fullWidth>Full Width Button</Button>
+        <Button variant="outline" fullWidth>Full Width Outline</Button>
+      </div>
+    </section>
 
-  <!-- Form Examples -->
-  <section class="space-y-4">
-    <h2 class="text-h3">Form Buttons</h2>
-    <div class="flex flex-wrap gap-4">
-      <Button type="submit">Submit</Button>
-      <Button type="reset" variant="outline">Reset</Button>
-      <Button type="button" variant="ghost">Cancel</Button>
-    </div>
-  </section>
+    <!-- Accessibility Examples -->
+    <section class="space-y-4">
+      <h2 class="text-h3">Accessibility Examples</h2>
+      <div class="flex flex-wrap gap-4">
+        <Button aria-label="Close dialog">×</Button>
+        <Button aria-describedby="help-text">Help</Button>
+        <Button aria-expanded="false" aria-haspopup="menu">Menu</Button>
+        <Button aria-pressed="false">Toggle</Button>
+      </div>
+      <p id="help-text" class="text-small text-secondary">
+        This button provides additional help information.
+      </p>
+    </section>
 
-  <!-- Interactive Demo -->
-  <section class="space-y-4">
-    <h2 class="text-h3">Interactive Demo</h2>
-    <div class="flex flex-wrap gap-4">
-      <Button id="demo-button" variant="solid" aria-describedby="demo-status">
-        Click me!
-      </Button>
-      <Button
-        id="toggle-button"
-        variant="outline"
-        aria-pressed="false"
-        aria-describedby="toggle-status"
-      >
-        Toggle
-      </Button>
-    </div>
-    <div id="demo-status" class="text-small text-secondary">
-      Button not clicked yet.
-    </div>
-    <div id="toggle-status" class="text-small text-secondary">
-      Toggle is off.
-    </div>
-  </section>
+    <!-- Form Examples -->
+    <section class="space-y-4">
+      <h2 class="text-h3">Form Buttons</h2>
+      <div class="flex flex-wrap gap-4">
+        <Button type="submit">Submit</Button>
+        <Button type="reset" id="reset-counters" variant="outline">Reset</Button
+        >
+        <Button type="button" variant="ghost">Cancel</Button>
+      </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section class="space-y-4">
+      <h2 class="text-h3">Interactive Demo</h2>
+      <div class="flex flex-wrap gap-4">
+        <Button id="demo-button" variant="solid" aria-describedby="demo-status">
+          Click me!
+        </Button>
+        <Button
+          id="toggle-button"
+          variant="outline"
+          aria-pressed="false"
+          aria-describedby="toggle-status"
+        >
+          Toggle
+        </Button>
+      </div>
+      <div id="demo-status" class="text-small text-secondary">
+        Button not clicked yet.
+      </div>
+      <div id="toggle-status" class="text-small text-secondary">
+        Toggle is off.
+      </div>
+    </section>
+  </div>
 </div>
 
 <script>
@@ -100,6 +114,7 @@ import Button from "@components/ui/Button.astro";
     const demoStatus = document.getElementById("demo-status");
     const toggleButton = document.getElementById("toggle-button");
     const toggleStatus = document.getElementById("toggle-status");
+    const resetButton = document.getElementById("reset-counters");
 
     let clickCount = 0;
     let isToggled = false;
@@ -116,6 +131,25 @@ import Button from "@components/ui/Button.astro";
         isToggled = !isToggled;
         toggleButton.setAttribute("aria-pressed", isToggled.toString());
         toggleStatus.textContent = `Toggle is ${isToggled ? "on" : "off"}.`;
+      });
+    }
+
+    if (resetButton) {
+      resetButton.addEventListener("click", () => {
+        // Reset counters
+        clickCount = 0;
+        isToggled = false;
+
+        // Reset status displays
+        if (demoStatus) {
+          demoStatus.textContent = "Button not clicked yet.";
+        }
+        if (toggleStatus) {
+          toggleStatus.textContent = "Toggle is off.";
+        }
+        if (toggleButton) {
+          toggleButton.setAttribute("aria-pressed", "false");
+        }
       });
     }
   });
