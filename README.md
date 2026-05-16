@@ -3,7 +3,7 @@
 A modern, accessible, and customizable Astro starter template with a comprehensive design system and reusable components.
 
 ```sh
-npm create astro@latest kovaldev-astro-projectname -- --template shivasena/kovaldev-astro-starter
+npm create astro@latest projectname -- --template koval-dev/astro-starter
 ```
 
 ## ✨ Features
