@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  variant?: "solid" | "outline" | "ghost" | "link";
+  variant?: "solid" | "outline" | "ghost" | "link" | "danger";
   size?: "sm" | "md" | "lg";
   disabled?: boolean;
   loading?: boolean;
@@ -79,6 +79,12 @@ const variantClasses = {
     "hover:no-underline",
     "active:text-secondary/80",
     "focus-visible:ring-secondary/50",
+  ],
+  danger: [
+    "bg-danger text-white",
+    "hover:bg-danger-hover",
+    "active:bg-danger-active",
+    "focus-visible:ring-danger/50",
   ],
 };
 

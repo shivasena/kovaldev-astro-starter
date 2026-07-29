@@ -1,6 +1,6 @@
 export interface ButtonProps {
   /** The visual style variant of the button */
-  variant?: 'solid' | 'outline' | 'ghost' | 'link';
+  variant?: 'solid' | 'outline' | 'ghost' | 'link' | 'danger';
   
   /** The size of the button */
   size?: 'sm' | 'md' | 'lg';

@@ -8,9 +8,12 @@
   */
 
   /* Colors */
-  --color-primary: oklch(0.78 0.1687 65.71);
-  --color-accent: oklch(0.51 0.196 22.53);
-  --color-secondary: oklch(0.34 0.1251 330.49);
+  --color-primary: oklch(0.2922 0.0942 254.39);
+  --color-accent: oklch(0.7535 0.137 84.67);
+  --color-secondary: oklch(0.6508 0.1874 258.38);
+  --color-danger: oklch(0.5696 0.1741 27.88);
+  --color-danger-hover: color-mix(in oklch, var(--color-danger) 88%, black);
+  --color-danger-active: color-mix(in oklch, var(--color-danger) 76%, black);
 
   /* 5 % accent on white and on black */
   --color-light: color-mix(in oklch, var(--color-primary) 5%, white);
