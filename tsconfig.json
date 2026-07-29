@@ -8,11 +8,28 @@
     "dist"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@*": [
-        "src/*"
+      "@/*": [
+        "./src/*"
       ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@data/*": [
+        "./src/data/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ]
     }
   }
 }
